@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture the Transactions</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div class="head">
+        <h1 class="heading">Company Name</h1>
+    </div>
+    <div class="form">
+        <form method = "post" action=''>
+        {% csrf_token %}
+            <label for="Iteam"> Iteam Name: -</label>
+            <select name="iteam:" id="iteam">
+                <option value="select Iteam">select Iteam</option>
+                <option value="Iteam1">Iteam1</option>
+                <option value="Iteam2">Iteam2</option>
+                <option value="Iteam3">Iteam3</option>
+            </select>
+            <label for="price" class="price">Price: -</label>
+            <input type="number" name="price:" required>
+            <label for="quantity" class="quantity">Quantity: -</label>
+            <input type="number" name="quantity:" required>
+            <input class= "submit" type="submit">
+        </form>
+    </div>
+</body>
+</html>
