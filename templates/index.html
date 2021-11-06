@@ -15,18 +15,23 @@
         <form method = "post" action=''>
         {% csrf_token %}
             <label for="Iteam"> Iteam Name: -</label>
-            <select name="iteam:" id="iteam">
+            <select name="iteam" id="iteam">
                 <option value="select Iteam">select Iteam</option>
                 <option value="Iteam1">Iteam1</option>
                 <option value="Iteam2">Iteam2</option>
                 <option value="Iteam3">Iteam3</option>
             </select>
             <label for="price" class="price">Price: -</label>
-            <input type="number" name="price:" required>
+            <input type="number" name="price" required>
             <label for="quantity" class="quantity">Quantity: -</label>
-            <input type="number" name="quantity:" required>
+            <input type="number" name="quantity" required>
             <input class= "submit" type="submit">
         </form>
     </div>
+<!-- when you click refresh button form resumbmission again and again to solve this problem use this scrip -->
+<script>
+    if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
 </body>
 </html>

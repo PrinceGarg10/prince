@@ -5,6 +5,10 @@ from home.models import order
 # Create your views here.
 def index(request):
     if request.method =="POST":
+        if request.POST.get('iteam'):
+            savevalue=order()
+            # savevalue.iteam=request.POST.get('iteam')
+            # savevalue.save()
         iteam = request.POST.get('iteam')
         price = request.POST.get('price')
         quantity = request.POST.get('quantity')
