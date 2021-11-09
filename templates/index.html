@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capture the Transactions</title>
-    <link rel="stylesheet" href="/static/index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capture the Transaction</title>
 </head>
+
 <body>
-    <div class="head">
-        <h1 class="heading">Company Name</h1>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  {% comment %} <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> {% endcomment %}
+  <form method = "post" action=''>
+  {% csrf_token %}
+    <div class="form-group" style="width: 50%; margin: auto; text-align: center;">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" name= "email" id="exampleFormControlInput1" placeholder="name@example.com" required>
     </div>
-    <div class="form">
-        <form method = "post" action=''>
-        {% csrf_token %}
-            <label for="Iteam"> Iteam Name: -</label>
-            <select name="iteam" id="iteam">
-                <option value="select Iteam" disabled="True">select Iteam</option>
-                <option value="Iteam1">Iteam1</option>
-                <option value="Iteam2">Iteam2</option>
-                <option value="Iteam3">Iteam3</option>
-            </select>
-            <label for="price" class="price">Price: -</label>
-            <input type="number" name="price" required>
-            <label for="quantity" class="quantity">Quantity: -</label>
-            <input type="number" name="quantity" required>
-            <input class= "submit" type="submit">
-        </form>
+    <div class="form-group" style="width: 50%; margin: auto; text-align: center;">
+      <label for="exampleFormControlSelect1">Iteam select</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="iteam">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
     </div>
-<!-- when you click refresh button form resumbmission again and again to solve this problem use this scrip -->
-<script>
+    <div class="form-group" style="width: 50%; margin: auto; text-align: center;">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" name="price" placeholder="1234" required>
+    </div>
+    <div class="form-group" style="width: 50%; margin: auto; text-align: center;">
+      <label for="Quantity">Quantity</label>
+      <input type="number" class="form-control" id="Quantity" name="quantity" placeholder="1234" required>
+    </div>
+    <!-- <div class="form-group" style="width: 50%; margin: auto; text-align: center;">
+      <label for="exampleFormControlSelect2">Example multiple select</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div> -->
+    <div class="form-group" style="width: 50%; margin: auto; text-align: center;">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-group" style="width: 50%; margin: auto; text-align: center; padding-top: 20px;">
+      <input type="submit" class="btn btn-primary btn-lg btn-block">
+    </div>
+  </form>
+  <script>
     if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );
 }
+</script>
 </body>
+
 </html>
